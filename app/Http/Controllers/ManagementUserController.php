@@ -6,10 +6,15 @@ use Illuminate\Http\Request;
 
 class ManagementUserController extends Controller
 {
-    
+    protected $param;
     public function index()
     {
-        return "Method ini nantinya akan digunakan untuk mengambil semua data user";
+        // return "Method ini nantinya akan digunakan untuk mengambil semua data user";
+        $nama = 'Tegar Shallahudin Al Ayubi';
+
+        $pelajaran = ['Algoritma & Pemrograman','Kalkulus','Pemrograman Web'];
+
+        return view('user.home',compact('pelajaran'))->with('nama',$nama);
     }
 
     public function create()
